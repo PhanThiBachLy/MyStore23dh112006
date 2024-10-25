@@ -1,0 +1,24 @@
+﻿@model _23DH112006_BachLy_Mystore.Models.Category
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>THÊM DANH MỤC</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Category</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @*Nhúng Partial View vào form cha*@
+       @Html.Partial("PVCreateCategory",Model)
+    </div>
+}
+    
+    
